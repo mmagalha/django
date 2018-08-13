@@ -1,0 +1,12 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% for tarefa in tarefas %}
+    <div class="tarefa">
+        <h2><a href="{% url 'tarefa_detail' pk=tarefa.pk %}">{{ tarefa.nome }}</a></h2>
+        <p>Responsável: {{ tarefa.responsavel }}</p>
+        <p>Descrição: {{ tarefa.descricao|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+{% endblock %}

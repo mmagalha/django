@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="tarefa">
+        <a class="btn btn-default" href="{% url 'tarefa_edit' pk=tarefa.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h1>{{ tarefa.nome }}</h1>
+        <p>{{ tarefa.descricao|linebreaksbr }}</p>
+    </div>
+{% endblock %}
