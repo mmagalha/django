@@ -3,10 +3,17 @@
 
 {% block content %}
 {% for tarefa in tarefas %}
-    <div class="tarefa">
-        <h2><a href="{% url 'tarefa_detail' pk=tarefa.pk %}">{{ tarefa.nome }}</a></h2>
-        <p>Responsável: {{ tarefa.responsavel }}</p>
-        <p>Descrição: {{ tarefa.descricao|linebreaksbr }}</p>
+    <div class="row">
+        <div class="col-md-8">
+          <h2><a href="{% url 'tarefa_detail' pk=tarefa.pk %}">{{ tarefa.nome }}</a></h2>
+        </div>
+          <div class="row">
+            <div class="col-md-8">Responsável: {{ tarefa.responsavel }}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">Data inicio: {{ tarefa.inicio }}</div>
+          </div>
+        <div class="col-md-8">Descrição: {{ tarefa.descricao|linebreaksbr }}</div>
     </div>
 {% endfor %}
 {% endblock %}

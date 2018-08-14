@@ -8,3 +8,6 @@ class Projeto(models.Model):
     descricao = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     #cliente = models.ForeignKey('cliente.nome', on_delete=models.CASCADE)
+    
+    def __str__(self):
+       return self.nome

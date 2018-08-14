@@ -13,3 +13,6 @@ class Tarefa(models.Model):
     prioridade = IntegerField(blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     projeto = models.ForeignKey(Projeto, related_name='tarefas', on_delete=models.CASCADE)
+
+    def __str__(self):
+       return self.nome
